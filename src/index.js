@@ -8,16 +8,32 @@ class App extends React.Component {
   }
 
   adicionar = () => {
-    alert("adicionar")
+    this.setState({
+      contador: this.state.contador+1,
+    })
+  }
+
+  diminuir = () => {
+    this.setState({
+      contador: this.state.contador-1,
+    })
+  }
+
+  zerar = () => {
+    this.setState({
+      contador: 0,
+    })
   }
 
   render() {
+    console.log('executa o render a cada mudança de estado!')
     return (
       <h1>
-        Hello React!!
-
-        <Button press={this.adicionar}>Update</Button>
-        <Button title="teste">Salvar</Button>
+        Contador: {this.state.contador}
+        <br/>
+        <Button press={this.adicionar}>Adicionar</Button>
+        <Button press={this.diminuir}>Diminuir</Button>
+        <Button press={this.zerar}>Zerar</Button>
       </h1>
     );
   }
