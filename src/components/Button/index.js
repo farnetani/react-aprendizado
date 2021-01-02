@@ -1,36 +1,9 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
 
-class Button extends Component {
-  state = {
-
-  }
-
-  UNSAFE_componentWillMount() {
-    console.log('componentWillMount')
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount')
-  }
-
-  render() {
-    console.log('render')
-    return (
-      <button onClick={this.props.press}>{ this.props.children }</button>      
-    );
-  }
+const Button = (props) => {
+  return (
+    <button onClick={props.press}>{props.children}</button>      
+  );
 }
-
-// Button.defaultProps = {
-//   title: 'Comportamento Padrão',
-//   description: ''
-// }
-
-// Button.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   description: PropTypes.string
-// }
-
 
 export default Button;
