@@ -5,6 +5,13 @@ import Button from './components/Button';
 class App extends React.Component {
   state = {
     contador: 0,
+    nome: '',
+  }
+
+  changeText = (event) => {
+    this.setState({
+      nome: event.target.value,
+    })
   }
 
   adicionar = () => {
@@ -28,13 +35,19 @@ class App extends React.Component {
   render() {
     console.log('executa o render a cada mudança de estado!')
     return (
-      <h1>
+      <div>
         Contador: {this.state.contador}
         <br/>
         <Button press={this.adicionar}>Adicionar</Button>
         <Button press={this.diminuir}>Diminuir</Button>
         <Button press={this.zerar}>Zerar</Button>
-      </h1>
+        <br/>
+        <br/>
+        <input onChange={this.changeText} />
+        <br/>
+        <br/>
+        <p>{this.state.nome}</p>
+      </div>
     );
   }
 }
